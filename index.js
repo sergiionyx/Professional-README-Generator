@@ -204,7 +204,11 @@ const questions = () => {
     ]);
 };
 
-// TODO: Create a function to write README file
-//function writeToFile(fileName, data) {}
-
-questions();
+questions()
+    .then(readmeDM => {
+        console.log(readmeDM);
+        return writeToFile(readmeDM)
+    })
+    .catch(err => {
+        console.log(err)
+    });
