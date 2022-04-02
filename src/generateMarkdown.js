@@ -14,6 +14,19 @@ function renderLicenseBadge(license) {
   }
 };
 
+// FUNCTION THAT RETURNS A LICENSE SECTION OF README OR EMPTY STRING(IN CASE IF NO LICANSE)
+function renderLicenseSection(license) {
+
+  if (license) {
+    return `## License
+
+${renderLicenseLink(license)}`
+  }
+  else {
+    return ""
+  }
+};
+
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {}
