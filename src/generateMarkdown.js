@@ -14,6 +14,22 @@ function renderLicenseBadge(license) {
   }
 };
 
+// FUNCTION THAT RETURNS A LICENSE LINK OR EMPTY STRING(IN CASE IF NO LICANSE)
+function renderLicenseLink(license) {
+  if (license === "MIT") {
+    return `[Link to license: MIT](https://opensource.org/licenses/MIT)`
+  }
+  else if (license === "Mozilla") {
+    return `[Link to license: MPL 2.0](https://opensource.org/licenses/MPL-2.0)`
+  }
+  else if (license === "Unlicense") {
+    return `[Link to license: Unlicense](http://unlicense.org/)`
+  }
+  else if (license === "I do not want to choose a license") {
+    return ""
+  }
+};
+
 // FUNCTION THAT RETURNS A LICENSE SECTION OF README OR EMPTY STRING(IN CASE IF NO LICANSE)
 function renderLicenseSection(license) {
 
@@ -39,12 +55,13 @@ ${badges}`
   }
 };
 
-// FUNCTION THAT RETURNS A BADGE OR EMPTY STRING(IN CASE IF NO FEATURES)
+// FUNCTION THAT RETURNS A FEATURES OR EMPTY STRING(IN CASE IF NO FEATURES)
 function renderFeatures(confirmFeatures, features) {
   if (confirmFeatures) {
     return `## Features
 
-${features}`
+${features}
+`
   }
   else {
     return ""
@@ -56,7 +73,8 @@ function renderContribute(confirmContribute, contribute) {
   if (confirmContribute) {
     return `## Contribute
 
-${contribute}`
+${contribute}
+`
   }
   else {
     return ""
@@ -68,7 +86,8 @@ function renderTests(confirmTests, tests) {
   if (confirmTests) {
     return `## Tests
     
-${tests}`
+${tests}
+`
   }
   else {
     return ""
@@ -104,15 +123,10 @@ ${data.usage}
 ## Credits
 
 ${data.about}
-
 ${renderLicenseSection(data.license)}
-
 ${renderBadges(data.confirmBadges, data.badges)}
-
 ${renderFeatures(data.confirmFeatures, data.features)}
-
 ${renderContribute(data.confirmContribute, data.contribute)}
-
 ${renderTests(data.confirmTests, data.tests)}
 
 ## Questions

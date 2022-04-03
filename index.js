@@ -205,6 +205,9 @@ const questions = () => {
 };
 
 questions()
+    .then(readmeData => {
+        return generateReadme(readmeData)
+    })
     .then(readmeDM => {
         console.log(readmeDM);
         return writeToFile(readmeDM)
