@@ -27,13 +27,53 @@ ${renderLicenseLink(license)}`
   }
 };
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {}
+// FUNCTION THAT RETURNS A BADGE OR EMPTY STRING(IN CASE IF NO BADGE)
+function renderBadges(confirmBadges, badges) {
+  if (confirmBadges) {
+    return `## Badges
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {}
+${badges}`
+  }
+  else {
+    return ""
+  }
+};
+
+// FUNCTION THAT RETURNS A BADGE OR EMPTY STRING(IN CASE IF NO FEATURES)
+function renderFeatures(confirmFeatures, features) {
+  if (confirmFeatures) {
+    return `## Features
+
+${features}`
+  }
+  else {
+    return ""
+  }
+};
+
+// FUNCTION THAT RETURNS A BADGE OR EMPTY STRING(IN CASE IF NO CONTRIBUTIONS)
+function renderContribute(confirmContribute, contribute) {
+  if (confirmContribute) {
+    return `## Contribute
+
+${contribute}`
+  }
+  else {
+    return ""
+  }
+};
+
+// FUNCTION THAT RETURNS A BADGE OR EMPTY STRING(IN CASE IF NO TESTS)
+function renderTests(confirmTests, tests) {
+  if (confirmTests) {
+    return `## Tests
+    
+${tests}`
+  }
+  else {
+    return ""
+  }
+};
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
